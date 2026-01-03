@@ -212,86 +212,6 @@ The RL agent successfully learns near-optimal receiver configurations:
 
 ---
 
-## 📚 Scientific Deliverables
-
-This framework has enabled three peer-reviewed publications in quantum machine learning:
-
----
-
-<table>
-<tr>
-<td align="center">🌟</td>
-<td>
-
-### Automatic Re-calibration of Quantum Devices by Reinforcement Learning
-
-**T. Crosta, L. Rebón, F. Vilariño, J. M. Matera, M. Bilkis** — *arXiv:2404.10726 (2024)*
-
-[![Paper](https://img.shields.io/badge/📄_Read_Paper-arXiv:2404.10726-b31b1b?style=for-the-badge)](https://arxiv.org/abs/2404.10726)
-
-A **model-free reinforcement learning framework** for continuous recalibration of quantum device parameters, addressing environmental detuning challenges. Demonstrated on Kennedy receiver-based long-distance quantum communication.
-
-**Key Contributions:**
-- 🔄 Model-free control loop for **continuous parameter recalibration**
-- 🎯 No prior knowledge of system dynamics required
-- 📡 Demonstrated on **Kennedy receiver-based long-distance quantum communication**
-- ⚡ Real-time adaptation to environmental drift
-
-</td>
-</tr>
-</table>
-
----
-
-<table>
-<tr>
-<td align="center">📡</td>
-<td>
-
-### Reinforcement-Learning Calibration of Coherent-State Receivers on Variable-Loss Optical Channels
-
-**M. Bilkis, M. Fraas, A. Acín, G. Sentís** — *arXiv:2203.09807 (2022)*
-
-[![Paper](https://img.shields.io/badge/📄_Read_Paper-arXiv:2203.09807-b31b1b?style=for-the-badge)](https://arxiv.org/abs/2203.09807)
-
-Calibration of quantum receivers for optical coherent states over channels with **variable transmissivity**. Demonstrates how RL optimizes error probabilities and adapts to changing channel conditions in real-time.
-
-**Key Contributions:**
-- 📉 Optimization of **error probabilities** under variable loss
-- 🔀 Adaptation to **time-varying channel transmissivity**
-- 🎛️ Practical calibration without channel tomography
-
-</td>
-</tr>
-</table>
-
----
-
-<table>
-<tr>
-<td align="center">🔬</td>
-<td>
-
-### Real-Time Calibration of Coherent-State Receivers: Learning by Trial and Error
-
-**M. Bilkis, M. Rosati, R. Muñoz-Tapia, J. Calsamiglia** — *Physical Review Research (2021)*  
-*arXiv:2001.10283*
-
-[![Paper](https://img.shields.io/badge/📄_Read_Paper-arXiv:2001.10283-b31b1b?style=for-the-badge)](https://arxiv.org/abs/2001.10283)
-
-The **foundational work** demonstrating that RL protocols enable agents to learn near-optimal coherent-state receivers composed of passive linear optics, photodetectors, and classical adaptive control—through real-time experimentation.
-
-**Key Contributions:**
-- 🧪 First demonstration of **RL for quantum receiver calibration**
-- 🔧 Near-optimal receivers via **trial and error** learning
-- ⚙️ Passive linear optics + photodetectors + adaptive control
-
-</td>
-</tr>
-</table>
-
----
-
 ## 🔧 Core API Reference
 
 ### Physics Functions
@@ -346,6 +266,82 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
+## 📚 Publications
+
+<div align="center">
+
+*This framework has enabled three peer-reviewed publications — swipe to explore* ◀ ▶
+
+</div>
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="33%">
+<a href="https://arxiv.org/abs/2404.10726">
+<img src="https://img.shields.io/badge/1-2404.10726-b31b1b?style=for-the-badge&labelColor=gray" alt="Paper 1"/>
+</a>
+<br/><br/>
+<b>🌟 Automatic Re-calibration of Quantum Devices by RL</b>
+<br/><br/>
+<sub>T. Crosta, L. Rebón, F. Vilariño,<br/>J. M. Matera, M. Bilkis</sub>
+<br/><br/>
+<code>arXiv:2404.10726 (2024)</code>
+<br/><br/>
+<em>Model-free RL framework for continuous recalibration of quantum device parameters. Demonstrated on Kennedy receiver-based long-distance quantum communication.</em>
+<br/><br/>
+✅ Continuous recalibration<br/>
+✅ No prior knowledge needed<br/>
+✅ Environmental drift adaptation
+</td>
+<td align="center" width="33%">
+<a href="https://arxiv.org/abs/2203.09807">
+<img src="https://img.shields.io/badge/2-2203.09807-b31b1b?style=for-the-badge&labelColor=gray" alt="Paper 2"/>
+</a>
+<br/><br/>
+<b>📡 RL Calibration on Variable-Loss Optical Channels</b>
+<br/><br/>
+<sub>M. Bilkis, M. Fraas,<br/>A. Acín, G. Sentís</sub>
+<br/><br/>
+<code>arXiv:2203.09807 (2022)</code>
+<br/><br/>
+<em>Calibration of quantum receivers for optical coherent states over channels with variable transmissivity using reinforcement learning.</em>
+<br/><br/>
+✅ Variable loss channels<br/>
+✅ Error probability optimization<br/>
+✅ No channel tomography
+</td>
+<td align="center" width="33%">
+<a href="https://arxiv.org/abs/2001.10283">
+<img src="https://img.shields.io/badge/3-2001.10283-b31b1b?style=for-the-badge&labelColor=gray" alt="Paper 3"/>
+</a>
+<br/><br/>
+<b>🔬 Real-Time Calibration: Learning by Trial and Error</b>
+<br/><br/>
+<sub>M. Bilkis, M. Rosati,<br/>R. Muñoz-Tapia, J. Calsamiglia</sub>
+<br/><br/>
+<code>Phys. Rev. Research (2020)</code>
+<br/><br/>
+<em>Foundational work: RL agents learn near-optimal coherent-state receivers through real-time trial and error experimentation.</em>
+<br/><br/>
+✅ First RL quantum receiver<br/>
+✅ Trial and error learning<br/>
+✅ Linear optics + detectors
+</td>
+</tr>
+</table>
+</div>
+
+<div align="center">
+
+[![Paper 1](https://img.shields.io/badge/📄_Paper_1-Crosta_2024-b31b1b)](https://arxiv.org/abs/2404.10726)
+[![Paper 2](https://img.shields.io/badge/📄_Paper_2-Bilkis_2022-b31b1b)](https://arxiv.org/abs/2203.09807)
+[![Paper 3](https://img.shields.io/badge/📄_Paper_3-Bilkis_2020-b31b1b)](https://arxiv.org/abs/2001.10283)
+
+</div>
+
+---
+
 ## 📬 Citation
 
 If you use this code in your research, please cite our papers:
@@ -384,4 +380,3 @@ If you use this code in your research, please cite our papers:
 [⬆ Back to Top](#-qrec--marek)
 
 </div>
-
