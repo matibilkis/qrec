@@ -13,10 +13,21 @@
 **Automatic Re-calibration of Quantum Devices by Reinforcement Learning**
 
 *Model-free calibration of quantum receivers through trial and error*
-<p align="center">
-  <img src="paper/image.png" alt="Featured visual: RL-based quantum calibration" width="600"/><br>
-  <img src="paper/image copy.png" alt="Additional schematic: Quantum receiver setup" width="600"/>
-</p>
+<div align="center">
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="paper/image.png" alt="RL agent learning curves" width="300"/>
+    </td>
+    <td width="50%" align="center">
+      <img src="paper/image copy.png" alt="Quantum receiver setup schematic" width="300"/>
+    </td>
+  </tr>
+</table>
+<sup>Our agents in action: learning curves for sensor calibration :)</sup>
+
+</div>
 
 ---
 
