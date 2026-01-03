@@ -13,10 +13,10 @@
 **Automatic Re-calibration of Quantum Devices by Reinforcement Learning**
 
 *Model-free calibration of quantum receivers through trial and error*
-
-<img src="https://raw.githubusercontent.com/matibilkis/marek/master/Screenshot%202021-09-06%20at%2014-11-58%20Real-time%20calibration%20of%20coherent-state%20receivers%20Learning%20by%20trial%20and%20error%20-%20PhysRevRe%5B...%5D.png" alt="Kennedy Receiver Setup" width="600"/>
-
-</div>
+<p align="center">
+  <img src="paper/image.png" alt="Featured visual: RL-based quantum calibration" width="600"/><br>
+  <img src="paper/image copy.png" alt="Additional schematic: Quantum receiver setup" width="600"/>
+</p>
 
 ---
 
