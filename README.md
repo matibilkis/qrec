@@ -10,12 +10,6 @@
 
 Model-free calibration of quantum receivers through trial and error.
 
-<p align="center">
-  <img src="paper/image.png" alt="RL agent learning curves" height="300"/>
-  <img src="paper/image copy.png" alt="Quantum receiver setup schematic" height="300"/>
-</p>
-<p align="center"><em>Our agents in action: learning curves for sensor calibration</em></p>
-
 ---
 
 ## Overview
@@ -180,6 +174,12 @@ The RL agent successfully learns near-optimal receiver configurations:
 | 3 | ε = 0.01, lr = 0.005 | Stable but slow learning |
 | 4 | ε = 0.01, lr = 0.05 | Good balance |
 | 5 | Change-point, lr = 0.05 | **Successful re-calibration** |
+
+<p align="center">
+  <img src="paper/image.png" alt="RL agent learning curves" height="200"/>
+  <img src="paper/image copy.png" alt="Quantum receiver setup schematic" height="200"/>
+</p>
+<p align="center"><em>Our agents in action: learning curves for sensor calibration</em></p>
 
 > **Key Insight:** Fixed learning rates enable adaptation to changing channel conditions, while decaying rates (1/N) lock the agent to initial configurations.
 
