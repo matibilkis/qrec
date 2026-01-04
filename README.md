@@ -1,104 +1,72 @@
-<div align="center">
+# QREC & MAREK
 
-# 🔮 QREC & MAREK
+**Reinforcement Learning for Optimal Quantum State Discrimination**
 
-### Reinforcement Learning for Optimal Quantum State Discrimination
-
-[![arXiv](https://img.shields.io/badge/arXiv-2404.10726-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/2404.10726)
-[![arXiv](https://img.shields.io/badge/arXiv-2203.09807-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/2203.09807)
-[![arXiv](https://img.shields.io/badge/arXiv-2001.10283-b31b1b.svg?style=for-the-badge)](https://arxiv.org/abs/2001.10283)
+[![arXiv](https://img.shields.io/badge/arXiv-2404.10726-b31b1b.svg)](https://arxiv.org/abs/2404.10726)
+[![arXiv](https://img.shields.io/badge/arXiv-2203.09807-b31b1b.svg)](https://arxiv.org/abs/2203.09807)
+[![arXiv](https://img.shields.io/badge/arXiv-2001.10283-b31b1b.svg)](https://arxiv.org/abs/2001.10283)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Automatic Re-calibration of Quantum Devices by Reinforcement Learning**
+Model-free calibration of quantum receivers through trial and error.
 
-*Model-free calibration of quantum receivers through trial and error*
-<div align="center">
-
-<table>
-  <tr>
-    <td width="50%" align="center">
-      <img src="paper/image.png" alt="RL agent learning curves" width="300"/>
-    </td>
-    <td width="50%" align="center">
-      <img src="paper/image copy.png" alt="Quantum receiver setup schematic" width="300"/>
-    </td>
-  </tr>
-</table>
-<sup>Our agents in action: learning curves for sensor calibration :)</sup>
-
-</div>
+<p align="center">
+  <img src="paper/image.png" alt="RL agent learning curves" height="300"/>
+  <img src="paper/image copy.png" alt="Quantum receiver setup schematic" height="300"/>
+</p>
+<p align="center"><em>Our agents in action: learning curves for sensor calibration</em></p>
 
 ---
 
-## 📖 Overview
+## Overview
 
 This repository provides a comprehensive framework for implementing **reinforcement learning (RL)** techniques to achieve **optimal quantum state discrimination** over unknown channels. The codebase enables real-time calibration and optimization of quantum devices—particularly **coherent-state receivers**—without requiring prior knowledge of system parameters.
 
-### 🎯 The Challenge
+### The Challenge
 
 Quantum devices are particularly challenging to operate: their functionality relies on precisely tuning parameters, yet environmental conditions constantly shift, causing detuning. Traditional approaches require detailed modeling of environmental behavior, which is often computationally unaffordable, while direct parameter measurements introduce extra noise.
 
-### 💡 Our Solution
+### Our Solution
 
 We frame quantum receiver calibration as a **reinforcement learning problem**, where an agent learns optimal discrimination strategies through trial and error—without any prior knowledge of experimental details.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-<table>
-<tr>
-<td width="50%">
+**Q-Learning Framework**
+- ε-greedy exploration with configurable parameters
+- Adaptive learning rates (1/N decay or fixed)
+- Real-time Q-value updates for optimal policy discovery
+- Support for change-point detection scenarios
 
-### 🤖 Q-Learning Framework
-- **ε-greedy exploration** with configurable parameters
-- **Adaptive learning rates** (1/N decay or fixed)
-- **Real-time Q-value updates** for optimal policy discovery
-- Support for **change-point detection** scenarios
+**Quantum Physics Engine**
+- Born rule probability calculations
+- Coherent state displacement operations
+- Kennedy receiver simulation
+- Variable-loss optical channel modeling
 
-</td>
-<td width="50%">
-
-### 🔬 Quantum Physics Engine
-- **Born rule** probability calculations
-- **Coherent state** displacement operations
-- **Kennedy receiver** simulation
-- **Variable-loss optical channel** modeling
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 📊 Analysis & Visualization
+**Analysis & Visualization**
 - Learning curve generation
 - Q-function landscape plotting
 - Noise sensitivity analysis
 - Comparative performance metrics
 
-</td>
-<td width="50%">
-
-### 🔄 Dynamic Calibration
-- **Model-free** control loops
+**Dynamic Calibration**
+- Model-free control loops
 - Continuous parameter re-calibration
-- Adaptation to **environmental drift**
+- Adaptation to environmental drift
 - Optimal β displacement learning
-
-</td>
-</tr>
-</table>
 
 ---
 
-## 🏗️ Repository Structure
+## Repository Structure
 
 ```
 qrec/
-├── 📁 qrec/                      # Core module
+├── qrec/                         # Core module
 │   └── utils.py                  # Q-learning utilities, physics functions
-├── 📁 experiments/               # Experimental configurations
+├── experiments/                  # Experimental configurations
 │   ├── 0/                        # Full exploration (ε=1.0)
 │   ├── 1/                        # Low exploration, 1/N learning rate
 │   ├── 2/                        # Change-point: α = 1.5 → 0.25
@@ -106,31 +74,31 @@ qrec/
 │   ├── 4/                        # Fixed lr = 0.05
 │   ├── 5/                        # Change-point with fixed lr (best)
 │   └── 6/                        # Noise inspection
-├── 📁 paper/                     # Publication figures
-├── 📄 basic_inspection.py        # Error landscape visualization
-├── 📄 index_experiments          # Experiment documentation
-└── 📄 requirements.txt           # Dependencies
+├── paper/                        # Publication figures
+├── basic_inspection.py           # Error landscape visualization
+├── index_experiments             # Experiment documentation
+└── requirements.txt              # Dependencies
 ```
 
-### Related Repository: [MAREK](https://github.com/matibilkis/marek)
+**Related Repository:** [matibilkis/marek](https://github.com/matibilkis/marek)
 
 ```
 marek/
-├── 📁 main_programs/             # Core RL algorithms
-├── 📁 dynamic_programming/       # DP optimization modules
-├── 📁 bounds_optimals_and_limits/# Theoretical bounds computation
-├── 📁 plotting_programs/         # Visualization tools
-├── 📁 appendix_A/                # Supplementary materials
-├── 📁 tests/                     # Validation suite
-├── 📄 agent.py                   # RL agent implementation
-├── 📄 environment.py             # Quantum channel simulation
-├── 📄 training.py                # Training loop
-└── 📄 basics.py                  # Core physics functions
+├── main_programs/                # Core RL algorithms
+├── dynamic_programming/          # DP optimization modules
+├── bounds_optimals_and_limits/   # Theoretical bounds computation
+├── plotting_programs/            # Visualization tools
+├── appendix_A/                   # Supplementary materials
+├── tests/                        # Validation suite
+├── agent.py                      # RL agent implementation
+├── environment.py                # Quantum channel simulation
+├── training.py                   # Training loop
+└── basics.py                     # Core physics functions
 ```
 
 ---
 
-## 🧮 Mathematical Framework
+## Mathematical Framework
 
 ### Coherent State Discrimination
 
@@ -162,16 +130,13 @@ Q₀(β) ← Q₀(β) + α · [max_g Q₁(β, n, g) - Q₀(β)]
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
 ```bash
-# Clone this repository
 git clone https://github.com/matibilkis/qrec.git
 cd qrec
-
-# Install dependencies
 pip install -r requirements.txt
 ```
 
@@ -197,38 +162,35 @@ reward = give_reward(guess, hidden_phase)  # Success/failure
 ### Running Experiments
 
 ```bash
-# Navigate to experiment directory
 cd experiments/5
-
-# Run change-point experiment with optimal parameters
 python change_point.py
 ```
 
 ---
 
-## 📈 Results
+## Results
 
 The RL agent successfully learns near-optimal receiver configurations:
 
 | Experiment | Configuration | Key Finding |
-|------------|---------------|-------------|
+|:-----------|:--------------|:------------|
 | 0 | ε = 1.0 (full exploration) | Baseline uniform sampling |
 | 1 | ε = 0.01, lr = 1/N | Convergent but slow adaptation |
-| 2 | Change-point, lr = 1/N | **Cannot adapt** to α changes |
+| 2 | Change-point, lr = 1/N | Cannot adapt to α changes |
 | 3 | ε = 0.01, lr = 0.005 | Stable but slow learning |
 | 4 | ε = 0.01, lr = 0.05 | Good balance |
-| 5 | Change-point, lr = 0.05 | **Successful re-calibration** ✓ |
+| 5 | Change-point, lr = 0.05 | **Successful re-calibration** |
 
-> 💡 **Key Insight:** Fixed learning rates enable adaptation to changing channel conditions, while decaying rates (1/N) lock the agent to initial configurations.
+> **Key Insight:** Fixed learning rates enable adaptation to changing channel conditions, while decaying rates (1/N) lock the agent to initial configurations.
 
 ---
 
-## 🔧 Core API Reference
+## API Reference
 
 ### Physics Functions
 
 | Function | Description |
-|----------|-------------|
+|:---------|:------------|
 | `p(alpha, n)` | Born rule probability P(n\|α) |
 | `Perr(beta, alpha)` | Error probability for displacement β |
 | `give_outcome(phase, beta, alpha)` | Sample photon detection outcome |
@@ -237,7 +199,7 @@ The RL agent successfully learns near-optimal receiver configurations:
 ### Q-Learning Functions
 
 | Function | Description |
-|----------|-------------|
+|:---------|:------------|
 | `define_q(nbetas)` | Initialize Q-tables and counters |
 | `ep_greedy(qvals, actions, ep)` | ε-greedy action selection |
 | `greedy(arr)` | Greedy selection (ties broken randomly) |
@@ -246,22 +208,21 @@ The RL agent successfully learns near-optimal receiver configurations:
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 ```
-numpy          # Numerical computations
-matplotlib     # Visualization
-scipy          # Optimization (minimize)
-tqdm           # Progress bars
-numba          # JIT compilation (optional)
-pickle         # Experiment serialization
+numpy
+matplotlib
+scipy
+tqdm
+numba
 ```
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome. Please open an issue first to discuss proposed changes.
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -271,91 +232,71 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ---
 
-## 📜 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-## 📚 Publications
+## Publications
 
-<div align="center">
+This framework has enabled three peer-reviewed publications in quantum machine learning:
 
-*This framework has enabled three peer-reviewed publications — swipe to explore* ◀ ▶
-
-</div>
-
-<div align="center">
 <table>
-<tr>
-<td align="center" width="33%">
-<a href="https://arxiv.org/abs/2404.10726">
-<img src="https://img.shields.io/badge/1-2404.10726-b31b1b?style=for-the-badge&labelColor=gray" alt="Paper 1"/>
-</a>
-<br/><br/>
-<b>🌟 Automatic Re-calibration of Quantum Devices by RL</b>
-<br/><br/>
-<sub>T. Crosta, L. Rebón, F. Vilariño,<br/>J. M. Matera, M. Bilkis</sub>
-<br/><br/>
-<code>arXiv:2404.10726 (2024)</code>
-<br/><br/>
-<em>Model-free RL framework for continuous recalibration of quantum device parameters. Demonstrated on Kennedy receiver-based long-distance quantum communication.</em>
-<br/><br/>
-✅ Continuous recalibration<br/>
-✅ No prior knowledge needed<br/>
-✅ Environmental drift adaptation
+<tr valign="top">
+<td width="33%">
+
+### Automatic Re-calibration of Quantum Devices by RL
+
+**T. Crosta, L. Rebón, F. Vilariño, J.M. Matera, M. Bilkis**
+
+[arXiv:2404.10726](https://arxiv.org/abs/2404.10726) (2024)
+
+Model-free RL framework for continuous recalibration of quantum device parameters. Demonstrated on Kennedy receiver-based long-distance quantum communication.
+
+- Continuous recalibration
+- No prior knowledge needed
+- Environmental drift adaptation
+
 </td>
-<td align="center" width="33%">
-<a href="https://arxiv.org/abs/2203.09807">
-<img src="https://img.shields.io/badge/2-2203.09807-b31b1b?style=for-the-badge&labelColor=gray" alt="Paper 2"/>
-</a>
-<br/><br/>
-<b>📡 RL Calibration on Variable-Loss Optical Channels</b>
-<br/><br/>
-<sub>M. Bilkis, M. Fraas,<br/>A. Acín, G. Sentís</sub>
-<br/><br/>
-<code>arXiv:2203.09807 (2022)</code>
-<br/><br/>
-<em>Calibration of quantum receivers for optical coherent states over channels with variable transmissivity using reinforcement learning.</em>
-<br/><br/>
-✅ Variable loss channels<br/>
-✅ Error probability optimization<br/>
-✅ No channel tomography
+<td width="33%">
+
+### RL Calibration on Variable-Loss Optical Channels
+
+**M. Bilkis, M. Fraas, A. Acín, G. Sentís**
+
+[arXiv:2203.09807](https://arxiv.org/abs/2203.09807) (2022)
+
+Calibration of quantum receivers for optical coherent states over channels with variable transmissivity using reinforcement learning.
+
+- Variable loss channels
+- Error probability optimization
+- No channel tomography
+
 </td>
-<td align="center" width="33%">
-<a href="https://arxiv.org/abs/2001.10283">
-<img src="https://img.shields.io/badge/3-2001.10283-b31b1b?style=for-the-badge&labelColor=gray" alt="Paper 3"/>
-</a>
-<br/><br/>
-<b>🔬 Real-Time Calibration: Learning by Trial and Error</b>
-<br/><br/>
-<sub>M. Bilkis, M. Rosati,<br/>R. Muñoz-Tapia, J. Calsamiglia</sub>
-<br/><br/>
-<code>Phys. Rev. Research (2020)</code>
-<br/><br/>
-<em>Foundational work: RL agents learn near-optimal coherent-state receivers through real-time trial and error experimentation.</em>
-<br/><br/>
-✅ First RL quantum receiver<br/>
-✅ Trial and error learning<br/>
-✅ Linear optics + detectors
+<td width="33%">
+
+### Real-Time Calibration: Learning by Trial and Error
+
+**M. Bilkis, M. Rosati, R. Muñoz-Tapia, J. Calsamiglia**
+
+[Phys. Rev. Research 2, 033295](https://arxiv.org/abs/2001.10283) (2020)
+
+Foundational work: RL agents learn near-optimal coherent-state receivers through real-time trial and error experimentation.
+
+- First RL quantum receiver
+- Trial and error learning
+- Linear optics + detectors
+
 </td>
 </tr>
 </table>
-</div>
-
-<div align="center">
-
-[![Paper 1](https://img.shields.io/badge/📄_Paper_1-Crosta_2024-b31b1b)](https://arxiv.org/abs/2404.10726)
-[![Paper 2](https://img.shields.io/badge/📄_Paper_2-Bilkis_2022-b31b1b)](https://arxiv.org/abs/2203.09807)
-[![Paper 3](https://img.shields.io/badge/📄_Paper_3-Bilkis_2020-b31b1b)](https://arxiv.org/abs/2001.10283)
-
-</div>
 
 ---
 
-## 📬 Citation
+## Citation
 
-If you use this code in your research, please cite our papers:
+If you use this code in your research, please cite:
 
 ```bibtex
 @article{crosta2024automatic,
@@ -372,7 +313,7 @@ If you use this code in your research, please cite our papers:
   year={2022}
 }
 
-@article{bilkis2021realtime,
+@article{bilkis2020realtime,
   title={Real-time calibration of coherent-state receivers: Learning by trial and error},
   author={Bilkis, M. and Rosati, M. and Mu{\~n}oz-Tapia, R. and Calsamiglia, J.},
   journal={Physical Review Research},
@@ -381,13 +322,3 @@ If you use this code in your research, please cite our papers:
   year={2020}
 }
 ```
-
----
-
-<div align="center">
-
-**Built with 💜 for the quantum computing community**
-
-[⬆ Back to Top](#-qrec--marek)
-
-</div>
